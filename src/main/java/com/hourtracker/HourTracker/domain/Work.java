@@ -11,6 +11,7 @@ public class Work {
     private workId id;
     private Float hours;
     private Boolean rate;
+    private Boolean paid;
 
     @EmbeddedId
     public workId getId() {
@@ -35,5 +36,14 @@ public class Work {
 
     public void setRate(Boolean rate) {
         this.rate = rate;
+    }
+
+    public Boolean getPaid() {
+        return paid;
+    }
+
+    public void setPaid(Boolean paid) {
+        this.paid = paid;
+
     }
 }
