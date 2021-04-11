@@ -1,7 +1,6 @@
 package com.hourtracker.HourTracker.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="Users")
@@ -13,7 +12,7 @@ public class User {
     private String employer;
     private String payScale;
 
-
+    @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     public Integer getId() {
         return id;
     }
