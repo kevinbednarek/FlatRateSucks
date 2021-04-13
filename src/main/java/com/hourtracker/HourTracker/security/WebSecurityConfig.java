@@ -1,15 +1,20 @@
 package com.hourtracker.HourTracker.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private UserDetailsService userDetailsService;
 
     @Bean
     public PasswordEncoder getPasswordEncoder(){
@@ -18,12 +23,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-             //why won't this format?
-                .passwordEncoder(getPasswordEncoder())
-                .withUser("kevinbednarek@gmail.com")
-            .password(getPasswordEncoder().encode("Kb102392"))
-            .roles("USER");
+        auth
+                .userDetailsService(userDetailsService) //video 15 of tutorial, leveraging databases
+                .passwordEncoder(getPasswordEncoder());
+            // .inMemoryAuthentication()
+            //.passwordEncoder(getPasswordEncoder())
+            // .withUser("kevinbednarek@gmail.com")
+            // .password(getPasswordEncoder().encode("Kb102392"))
+            //.roles("USER");
         }
 
     @Override
@@ -41,6 +48,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutUrl("/logout")
                 .permitAll();
 
+    }
+
+    private class userDetailsService {
     }
 }
 
