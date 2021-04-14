@@ -4,8 +4,8 @@ import com.hourtracker.HourTracker.domain.User;
 import com.hourtracker.HourTracker.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService; //do we need this?
-import org.springframework.security.core.userdetails.UsernameNotFoundException; //do we need this?
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class UserDetailsServiceImpl implements UserDetailsService {
 
