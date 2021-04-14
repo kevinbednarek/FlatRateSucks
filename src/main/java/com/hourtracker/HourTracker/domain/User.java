@@ -1,6 +1,10 @@
 package com.hourtracker.HourTracker.domain;
 
+import com.hourtracker.HourTracker.security.Authority;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="Users")
@@ -11,6 +15,16 @@ public class User {
     private String name;
     private String employer;
     private String payScale;
+    private Set<Authority> authorities = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "user")
+    public Set<Authority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Set<Authority> authorities) {
+        this.authorities = authorities;
+    }
 
     @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     public Integer getId() {

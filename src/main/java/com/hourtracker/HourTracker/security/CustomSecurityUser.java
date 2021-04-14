@@ -12,11 +12,23 @@ public class CustomSecurityUser extends User implements UserDetails {
 
     private static final long serialVersionUID = -1773705251828015574L;
 
+    public CustomSecurityUser() {}
+
+    public CustomSecurityUser(User user){
+        this.setAuthorities(user.getAuthorities());
+        this.setId(user.getId());
+        this.setName(user.getName());
+        this.setEmployer(user.getEmployer());
+        this.setUsername(user.getUsername());
+        this.setPassword(user.getPassword());
+        this.setPayScale(user.getPayScale());
+    }
+
     Set<Authority> authorities = new HashSet<>();
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
+    public Set<Authority> getAuthorities() {
+        return this.getAuthorities();
     }
 
     @Override
