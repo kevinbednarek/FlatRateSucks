@@ -4,6 +4,17 @@
       layout:decorate="~{fragments/layout}">
 <head>
     <title>Login</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+            crossorigin="anonymous"></script>
+    <script type = "test/javascript">
+        $(function () {
+            $("#createAccount").click(function (){
+                window.location.href = "/register";
+            });
+        });
+</script>
 </head>
 <body>
 <div layout:fragment="content" th:remove="tag">
@@ -48,6 +59,11 @@
                                    id="login-submit"
                                    class="form-control btn btn-info"
                                    value="Log In">
+                            <input type="button"
+                                   name="login-submit"
+                                   id="createAccount"
+                                   class="form-control btn btn-info"
+                                   value="Create Account">
                         </div>
                     </div>
                 </div>

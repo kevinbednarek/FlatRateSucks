@@ -26,11 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth
                 .userDetailsService(userDetailsService) //video 15 of tutorial, leveraging databases
                 .passwordEncoder(getPasswordEncoder());
-            // .inMemoryAuthentication()
-            //.passwordEncoder(getPasswordEncoder())
-            // .withUser("kevinbednarek@gmail.com")
-            // .password(getPasswordEncoder().encode("Kb102392"))
-            //.roles("USER");
+
         }
 
     @Override
@@ -38,6 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .authorizeRequests()
                 .antMatchers("/").permitAll()
+                .antMatchers("/register").permitAll()
                 .anyRequest().hasRole("USER").and()
             .formLogin()
                 .loginPage("/login")
