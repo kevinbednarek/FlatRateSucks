@@ -14,8 +14,8 @@ public class User {
     private String password;
     private String name;
     private String employer;
-    private String payScale;
     private Set<Authority> authorities = new HashSet<>();
+    private Set<Work> jobs = new HashSet<>(); //added this to crate many jobs for one user. May be wrong.
 
     @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "user")
     public Set<Authority> getAuthorities() {
@@ -55,10 +55,6 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getEmployer() {
         return employer;
     }
@@ -67,11 +63,16 @@ public class User {
         this.employer = employer;
     }
 
-    public String getPayScale() {
-        return payScale;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setPayScale(String payScale) {
-        this.payScale = payScale;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    public Set<Work> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(Set<Work> jobs) {
+        this.jobs = jobs;
     }
 }

@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class DashboardController {
 
-    @RequestMapping(value="/index", method=RequestMethod.GET)
+    //@RequestMapping(value="/index", method=RequestMethod.GET)
     //using getmapping instead
-    //@GetMapping("/index")
+    @GetMapping("/index")
     public String rootView () {
         return "index";
     }

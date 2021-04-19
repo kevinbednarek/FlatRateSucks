@@ -18,10 +18,8 @@ public class CustomSecurityUser extends User implements UserDetails {
         this.setAuthorities(user.getAuthorities());
         this.setId(user.getId());
         this.setName(user.getName());
-        this.setEmployer(user.getEmployer());
         this.setUsername(user.getUsername());
         this.setPassword(user.getPassword());
-        this.setPayScale(user.getPayScale());
     }
 
     Set<Authority> authorities = new HashSet<>();
