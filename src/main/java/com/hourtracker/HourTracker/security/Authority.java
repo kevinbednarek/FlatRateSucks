@@ -24,7 +24,7 @@ public class Authority implements GrantedAuthority {
         this.id = id;
     }
 
-    @ManyToOne()
+    @ManyToOne
     public User getUser() {
         return user;
     }

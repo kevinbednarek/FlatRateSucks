@@ -19,7 +19,8 @@ public class DashboardAddController {
         Work job = new Work();
 
         job.setPaid(Boolean.FALSE);
-        job.setUser(user);
+
+
 
         return "redirect:/dashboardAdd";
     }

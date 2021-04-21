@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="Users")
+@Table(name="users")
 public class User {
     private Integer id;
     private String username;
@@ -15,9 +15,9 @@ public class User {
     private String name;
     private String employer;
     private Set<Authority> authorities = new HashSet<>();
-    private Set<Work> jobs = new HashSet<>(); //added this to crate many jobs for one user. May be wrong.
+    //private Set<Work> jobs = new HashSet<>(); //added this to crate many jobs for one user. May be wrong.
 
-    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER, mappedBy = "user")
     public Set<Authority> getAuthorities() {
         return authorities;
     }
@@ -67,12 +67,12 @@ public class User {
         this.name = name;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    public Set<Work> getJobs() {
-        return jobs;
-    }
+    //@OneToMany
+    //public Set<Work> getJobs() {
+        //return jobs;
+    //}
 
-    public void setJobs(Set<Work> jobs) {
-        this.jobs = jobs;
-    }
+    //public void setJobs(Set<Work> jobs) {
+        //this.jobs = jobs;
+    //}
 }

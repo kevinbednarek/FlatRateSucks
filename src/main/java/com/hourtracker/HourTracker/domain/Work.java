@@ -1,33 +1,34 @@
 package com.hourtracker.HourTracker.domain;
 
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 
 public class Work {
 
+
     private workId id;
-    private int repairOrder;
+    private Integer repairOrder;
     private Float hours;
     private Boolean rate;
     private Boolean paid;
     private LocalDate date;
-    private User user;
+    private String description;
+    //private User user; //Would like a user object, but may be able to use the embedded id in work for user id.
 
-    @EmbeddedId
+
+    @EmbeddedId //@GeneratedValue(strategy = GenerationType.IDENTITY) //Does this work? Do you generate your own value, or do you need one for user?
     public workId getId() {
         return id;
     }
 
-    public int getRepairOrder() {
+    public Integer getRepairOrder() {
         return repairOrder;
     }
 
-    public void setRepairOrder(int repairOrder) {
+    public void setRepairOrder(Integer repairOrder) {
         this.repairOrder = repairOrder;
     }
 
@@ -68,12 +69,20 @@ public class Work {
         this.date = date;
     }
 
-    public User getUser() {
-        return user;
+    public String getDescription() {
+        return description;
     }
 
-    @ManyToOne
-    public void setUser(User user) {
-        this.user = user;
+    public void setDescription(String description) {
+        this.description = description;
     }
+
+    //@ManyToOne
+    //public User getUser() {
+        //return user;
+    //}
+
+    //public void setUser(User user) {
+        //this.user = user;
+    //}
 }
