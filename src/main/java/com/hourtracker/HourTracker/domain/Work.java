@@ -9,18 +9,18 @@ import java.time.LocalDate;
 public class Work {
 
 
-    private workId id;
+    private Integer id;
     private Integer repairOrder;
     private Float hours;
     private Boolean rate;
     private Boolean paid;
     private LocalDate date;
     private String description;
-    //private User user; //Would like a user object, but may be able to use the embedded id in work for user id.
+    private User user; //Would like a user object, but may be able to use the embedded id in work for user id.
 
-
-    @EmbeddedId //@GeneratedValue(strategy = GenerationType.IDENTITY) //Does this work? Do you generate your own value, or do you need one for user?
-    public workId getId() {
+//Changing from @EmbeddedId and adding user.
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) //Does this work? Do you generate your own value, or do you need one for user?
+    public Integer getId() {
         return id;
     }
 
@@ -32,7 +32,7 @@ public class Work {
         this.repairOrder = repairOrder;
     }
 
-    public void setId(workId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -77,12 +77,12 @@ public class Work {
         this.description = description;
     }
 
-    //@ManyToOne
-    //public User getUser() {
-        //return user;
-    //}
+    @ManyToOne
+    public User getUser() {
+        return user;
+    }
 
-    //public void setUser(User user) {
-        //this.user = user;
-    //}
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

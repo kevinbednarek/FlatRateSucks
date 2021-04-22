@@ -13,7 +13,7 @@ public class User {
     private String username;
     private String password;
     private String name;
-    private String employer;
+    //private String employer; not going to use this yet
     private Set<Authority> authorities = new HashSet<>();
     //private Set<Work> jobs = new HashSet<>(); //added this to crate many jobs for one user. May be wrong.
 
@@ -55,24 +55,24 @@ public class User {
         return name;
     }
 
-    public String getEmployer() {
-        return employer;
-    }
-
-    public void setEmployer(String employer) {
-        this.employer = employer;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    //@OneToMany
-    //public Set<Work> getJobs() {
-        //return jobs;
+    //public String getEmployer() {
+    //return employer;
     //}
 
-    //public void setJobs(Set<Work> jobs) {
-        //this.jobs = jobs;
-    //}
+    //public void setEmployer(String employer) {
+    //this.employer = employer;
+    //} ------ not using this yet
+
+    /*@OneToMany
+    public Set<Work> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(Set<Work> jobs) {
+        this.jobs = jobs;
+    }*/
 }

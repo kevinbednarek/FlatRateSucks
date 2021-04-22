@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
-@Embeddable
+//@Embeddable
 public class workId implements Serializable {
 
     private static final long serialVersionUID = -8355867264578779074L;
