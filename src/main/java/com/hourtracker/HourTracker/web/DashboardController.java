@@ -23,12 +23,18 @@ import java.util.Optional;
 public class DashboardController {
 
     @GetMapping("/index") //added / instead of index
+
+
+
     public String rootView () {
         return "index";
     }
 
     @GetMapping("/dashboard")
     public String dashboard(@AuthenticationPrincipal User user, ModelMap model){ //added stuff, let's see what works
+
+        System.out.println("dashboard get mapping. Puts user and stuff on the model.");
+
         return "dashboard";
     }
 

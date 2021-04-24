@@ -30,7 +30,7 @@ public class DashboardAddController {
     }
 
     /*@PostMapping("/dashboardAdd/{workId}")
-    public String saveProduct(@PathVariable Integer worktId, Work work) {
+    public String saveProduct(@PathVariable Integer workId, Work work) {
 
         job = workRepository.save(job);
 
@@ -41,6 +41,8 @@ public class DashboardAddController {
     public String getWork(@PathVariable Integer workId, ModelMap model, HttpServletResponse response) throws IOException {
        Optional<Work> jobOpt = workRepository.findById(workId);
 
+       System.out.println("dashboardAdd with id get mapping");
+
        if (jobOpt.isPresent()){
            Work job = jobOpt.get();
            model.put("job", job);
@@ -48,22 +50,28 @@ public class DashboardAddController {
            Work job = new Work();
            model.put("job", job);
            response.sendError(HttpStatus.NOT_FOUND.value(), "Job with id " + workId +" was not found.");
-           return "dashboardAdd";
+           return "dashboardAdd/{workId}"; //added extra stuff off of just dashboardAdd
        }
 
 
         return "dashboardAdd";
     }
 
-    @PostMapping("/dashboardAdd/{workId}")
+    @PostMapping("/dashboardAdd/{workId}") //changed from work to job
     public String saveWork(@PathVariable Integer workId, Work job){ //may need to be mapped to Work work, but have Work job right now.
 
+        System.out.println("dashboardAdd with id post mapping. Should save.");
+
+        System.out.println(job);
         job = workRepository.save(job);
-        return "redirect:/dashboardAdd/"+ job.getId(); //may need to be called work.getId?
+        return "redirect:/dashboardAdd/"+ job.getId();
     }
 
     @PostMapping("/dashboardAdd") //may need to be plural?
     public String createJob(@AuthenticationPrincipal User user){
+
+        System.out.println("dashboardAdd with NO id post mapping. Makes jobs?");
+
         Work job = new Work();
 
         job.setPaid(false);
