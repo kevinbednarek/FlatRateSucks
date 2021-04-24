@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -23,10 +24,15 @@ public class DashboardAddController {
     @Autowired
     private WorkRepository workRepository;
 
-    @GetMapping("/dashboardAdd")
-    public String getDashboardAdd(ModelMap model) {
-        model.put("work", new Work()); //added this, let's see
-        return "dashboardAdd";
+    @GetMapping("/jobs") //changed from dashboardAdd to workView
+    public String getJobs(@AuthenticationPrincipal User user, ModelMap model) {
+
+        System.out.println("get mapping for dashboardAdd, should return workView");
+
+        model.put("jobs", new Work()); //added this, let's see
+        List<Work> work = workRepository.findByUser(user); //this is new and may be unnecessary.
+        model.put("jobs", work);
+        return "jobs";
     }
 
     /*@PostMapping("/dashboardAdd/{workId}")
@@ -39,7 +45,7 @@ public class DashboardAddController {
 
     @GetMapping("/dashboardAdd/{workId}")
     public String getWork(@PathVariable Integer workId, ModelMap model, HttpServletResponse response) throws IOException {
-       Optional<Work> jobOpt = workRepository.findById(workId);
+       Optional<Work> jobOpt = workRepository.findByIdWithUser(workId);
 
        System.out.println("dashboardAdd with id get mapping");
 

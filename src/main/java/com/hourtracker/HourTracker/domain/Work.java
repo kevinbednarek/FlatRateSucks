@@ -85,4 +85,18 @@ public class Work {
     public void setUser(User user) {
         this.user = user;
     }
+
+    @Override
+    public String toString() {
+        return "Work{" +
+                "id=" + id +
+                ", repairOrder=" + repairOrder +
+                ", hours=" + hours +
+                ", rate=" + rate +
+                ", paid=" + paid +
+                ", date=" + date +
+                ", description='" + description + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }

@@ -15,7 +15,7 @@ public class User {
     private String name;
     //private String employer; not going to use this yet
     private Set<Authority> authorities = new HashSet<>();
-    //private Set<Work> jobs = new HashSet<>(); //added this to crate many jobs for one user. May be wrong.
+    private Set<Work> jobs = new HashSet<>(); //added this to crate many jobs for one user. May be wrong.
 
     @OneToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER, mappedBy = "user")
     public Set<Authority> getAuthorities() {
@@ -67,12 +67,12 @@ public class User {
     //this.employer = employer;
     //} ------ not using this yet
 
-    /*@OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER, mappedBy = "user")
     public Set<Work> getJobs() {
         return jobs;
     }
 
     public void setJobs(Set<Work> jobs) {
         this.jobs = jobs;
-    }*/
+    }
 }

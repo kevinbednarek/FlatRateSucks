@@ -14,6 +14,7 @@ Dashboard Add Job
 <form action="" method="post">
     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
     <input type="hidden" th:field="${job.id}"/>
+    <input type="hidden" th:field="${job.user}"/>
     <div class="form-group">
     <label for="repairOrder">Repair Order:</label>
     <input type="text" th:field="${job.repairOrder}"
