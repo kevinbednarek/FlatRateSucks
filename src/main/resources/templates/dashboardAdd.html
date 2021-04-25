@@ -15,6 +15,7 @@ Dashboard Add Job
     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
     <input type="hidden" th:field="${job.id}"/>
     <input type="hidden" th:field="${job.user}"/>
+
     <div class="form-group">
     <label for="repairOrder">Repair Order:</label>
     <input type="text" th:field="${job.repairOrder}"
@@ -25,8 +26,12 @@ Dashboard Add Job
            placeholder="Repair Order">
     </div>
 
+    <div>
+        <input type="date" class="form-control" name="date" th:value="${job.date}" />
+    </div>
+
     <div class="form-group">
-        <label for="description">Job Description</label>:
+        <label for="description">Job Description:</label>
         <input type="text" th:field="${job.description}"
                id="description"
                name="description"
@@ -36,13 +41,18 @@ Dashboard Add Job
     </div>
 
     <div class="form-group">
-        <label for="hours">Hours</label>
+        <label for="hours">Hours:</label>
         <input type="text" th:field="${job.hours}"
                id="hours"
                name="hours"
                class="form-control"
                autofocus="autofocus"
                placeholder="Hours">
+    </div>
+
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="paid" th:field="${job.paid}">
+        <label class="form-check-label" for="paid">Paid</label>
     </div>
 
 

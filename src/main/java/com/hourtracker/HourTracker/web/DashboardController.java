@@ -22,6 +22,9 @@ import java.util.Optional;
 @Controller
 public class DashboardController {
 
+    @Autowired
+    private WorkRepository workRepository;
+
     @GetMapping("/index") //added / instead of index
 
 
@@ -32,6 +35,10 @@ public class DashboardController {
 
     @GetMapping("/dashboard")
     public String dashboard(@AuthenticationPrincipal User user, ModelMap model){ //added stuff, let's see what works
+
+        List<Work> jobs = workRepository.findByUser(user);
+
+        model.put("jobs", jobs);
 
         System.out.println("dashboard get mapping. Puts user and stuff on the model.");
 

@@ -1,7 +1,10 @@
 package com.hourtracker.HourTracker.domain;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity
@@ -12,8 +15,9 @@ public class Work {
     private Integer id;
     private Integer repairOrder;
     private Float hours;
-    private Boolean rate;
+    //private Boolean rate; Not using this right now
     private Boolean paid;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private String description;
     private User user; //Would like a user object, but may be able to use the embedded id in work for user id.
@@ -44,13 +48,13 @@ public class Work {
         this.hours = hours;
     }
 
-    public Boolean getRate() {
+    /*public Boolean getRate() {
         return rate;
     }
 
     public void setRate(Boolean rate) {
         this.rate = rate;
-    }
+    }*/ //not using this right now
 
     public Boolean getPaid() {
         return paid;
@@ -92,7 +96,7 @@ public class Work {
                 "id=" + id +
                 ", repairOrder=" + repairOrder +
                 ", hours=" + hours +
-                ", rate=" + rate +
+               // ", rate=" + rate + not using this right now
                 ", paid=" + paid +
                 ", date=" + date +
                 ", description='" + description + '\'' +

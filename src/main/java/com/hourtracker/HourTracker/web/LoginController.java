@@ -36,6 +36,6 @@ public class LoginController {
         System.out.println("register post mapping. Saves the user with user service?");
 
        User savedUser = userService.save(user);
-        return "redirect:/login";
+        return "redirect:/";
     }
 }

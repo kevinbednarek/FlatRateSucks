@@ -67,7 +67,7 @@ public class User {
     //this.employer = employer;
     //} ------ not using this yet
 
-    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "user")
     public Set<Work> getJobs() {
         return jobs;
     }
