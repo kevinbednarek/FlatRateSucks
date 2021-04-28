@@ -38,4 +38,13 @@ public class LoginController {
        User savedUser = userService.save(user);
         return "redirect:/";
     }
+
+    @PostMapping("/logout")
+    public String logoutPost(){
+
+        System.out.println("Logged out");
+
+        return "redirect:/index";
+
+    }
 }

@@ -82,7 +82,7 @@ public class DashboardAddController {
 
         Work job = new Work();
 
-        job.setPaid(false);
+        job.setPaid(null);
         job.setDate(LocalDate.now());
         System.out.println("Paid is set to 0");
         job.setUser(user);

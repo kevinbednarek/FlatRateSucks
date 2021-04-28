@@ -59,7 +59,7 @@
             </div>
             <div class="col-sm">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="paid" th:field="${job.paid}">
+                    <input class="form-check-input "  type="checkbox" id="paid" th:field="${job.paid}">
                     <label class="form-check-label" for="paid">Paid</label>
                 </div>
             </div>
@@ -363,8 +363,13 @@
     </div>
 </div></br>
 
+    <input type="submit"
+           name="login-submit"
+           id="createJob"
+           class="btn btn-primary btn-lg"
+           value="Add Job">
 
-    <button id="createJob"> Add Job</button>
+    <!--<button id="createJob"> Add Job</button>-->
 
 
 </form>

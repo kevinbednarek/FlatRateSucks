@@ -25,10 +25,7 @@ public class DashboardController {
     @Autowired
     private WorkRepository workRepository;
 
-    @GetMapping("/index") //added / instead of index
-
-
-
+    @GetMapping("/index")
     public String rootView () {
         return "index";
     }

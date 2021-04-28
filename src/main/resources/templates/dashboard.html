@@ -15,16 +15,18 @@
     <div th:each="job : ${jobs}">
         <a th:href="@{/dashboardAdd/{workId}(workId=${job.id})}" th:text="${job.repairOrder}"></a>
         <div th:text="|Date: ${job.date}|"></div>
-        <div th:text="|Description: ${job.description}|"></div>
-        <div th:text="|Hours: ${job.hours}|"></div>
-        <div th:text="|Paid: ${job.paid}|"></div></br>
+        </br>
     </div>
 
 
 
 <div>
 <form th:action="@{/logout}" method="post">
-    <button type="button" class="btn btn-secondary">Log out</button>
+    <input type="submit"
+           name="logout-submit"
+           id="logout"
+           class="btn btn-secondary btn-lg"
+           value="Log Out">
 </form>
 </div>
 
