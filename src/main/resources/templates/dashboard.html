@@ -12,9 +12,57 @@
         <button id="createJob" class="btn btn-primary"> Add Job</button></form>
     </form>
 
+
+
+
+
+<table border="1">
+    <tr>
+        <td>Repair Order</td>
+        <td>Date</td>
+        <td>Description1</td>
+    </tr>
+    <tr th:each="job :${jobs}">
+        <td th:text="${job?.repairOrder}">Repair Order</td>
+        <td th:text="${job?.date}">Date</td>
+        <td th:text="${job?.description}">Description</td>
+    </tr>
+</table>
+
+
+
+<table class="table">
+    <thead>
+    <tr>
+
+        <th scope="col">Repair Order</th>
+        <th scope="col">Date</th>
+        <th scope="col">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td th:text="${job?.repairOrder}"></td>
+        <td th:text="${job?.date}"></td>
+        <td th:text="${job?.description}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
     <div th:each="job : ${jobs}">
         <a th:href="@{/dashboardAdd/{workId}(workId=${job.id})}" th:text="${job.repairOrder}"></a>
-        <div th:text="|Date: ${job.date}|"></div>
+        <!--<div th:text="|Date: ${job.date}|"></div>-->
         </br>
     </div>
 

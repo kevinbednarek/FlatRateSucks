@@ -31,11 +31,16 @@ public class DashboardController {
     }
 
     @GetMapping("/dashboard")
-    public String dashboard(@AuthenticationPrincipal User user, ModelMap model){ //added stuff, let's see what works
+    public String dashboard(@AuthenticationPrincipal User user, Integer id, ModelMap model){ //added stuff, let's see what works
 
         List<Work> jobs = workRepository.findByUser(user);
+        Optional<Work> jobs2 = workRepository.findByIdWithUser(id);
 
         model.put("jobs", jobs);
+        model.put("jobs2", jobs2);
+
+        System.out.println(jobs);
+        System.out.println(jobs2);
 
         System.out.println("dashboard get mapping. Puts user and stuff on the model.");
 

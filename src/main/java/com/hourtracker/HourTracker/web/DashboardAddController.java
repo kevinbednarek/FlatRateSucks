@@ -82,8 +82,11 @@ public class DashboardAddController {
 
         Work job = new Work();
 
-        job.setPaid(null);
+        //job.setPaid(null);
         job.setDate(LocalDate.now());
+
+        //doing this for now, may change if search parameters need jobs with no null name
+
         System.out.println("Paid is set to 0");
         job.setUser(user);
 

@@ -16,11 +16,16 @@ public interface WorkRepository extends JpaRepository<Work, Integer> {
             + " where w.id = :id")
     Optional<Work> findByIdWithUser(Integer id);
 
+    @Query("select w from Work w"
+            + " join fetch w.user"
+            + " where w.repairOrder = :repairOrder")
+    Optional<Work> findByRepairOrderWithUser(Integer repairOrder);
+
     //select * from work where user = :user
     List<Work> findByUser(User user);
 
     //select * from work where repairOder = :repairOrder
-    List<Work> findByRepairOrder(Integer repairOrder);
+    List<Work> findByRepairOrder(Integer repairOrder) ;
 
     //select * from work where description = :description
     List<Work> findByDescription(String description);
