@@ -41,7 +41,7 @@ public class DashboardAddController {
 
         job = workRepository.save(job);
 
-        return "redirect:/products/"+work.getId(); //have work instead of job?
+        return "redirect:/dashboardAdd/"+work.getId(); //have work instead of job?
     }*/ //may try this later
 
     @GetMapping("/dashboardAdd/{workId}")
@@ -71,7 +71,7 @@ public class DashboardAddController {
         System.out.println("dashboardAdd with id post mapping. Should save.");
         //job.setDate(LocalDate.now());
         System.out.println(job);
-        job = workRepository.save(job);
+        job = workRepository.save(job); //not used?
         return "redirect:/dashboard";
     }
 

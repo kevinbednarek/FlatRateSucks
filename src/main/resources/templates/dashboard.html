@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <title>HourTracker Dashboard</title>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/images/Transparent_Logo.png"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <form action="/dashboardAdd" method="post">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                        <button id="createJob" class="btn btn-secondary btn-sm"> Add Job</button></form>
+                    </form>
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>-->
+                </ul>
+                <div class="navbar-text ml-auto">
+                    <div>
+                        <form th:action="@{/logout}" method="post">
+                            <input type="submit"
+                                   name="logout-submit"
+                                   id="logout"
+                                   class="btn btn-secondary btn-sm"
+                                   value="Log Out">
+                        </form>
+                    </div>
+      </div>
+            </div>
+        </div>
+    </nav>
+
+
 </head>
 <body>
-<h1>HourTracker Dashboard</h1>
-    <form action="/dashboardAdd" method="post">
-        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-        <button id="createJob" class="btn btn-primary"> Add Job</button></form>
-    </form>
 
-
-
-
-
-<table border="1">
+<div class="container">
+<table class="table table-responsive table-striped table-hover" id="workTable">
+    <thead class="table-dark">
     <tr>
-        <td>Repair Order</td>
-        <td>Date</td>
-        <td>Description1</td>
-    </tr>
-    <tr th:each="job :${jobs}">
-        <td th:text="${job?.repairOrder}">Repair Order</td>
-        <td th:text="${job?.date}">Date</td>
-        <td th:text="${job?.description}">Description</td>
-    </tr>
-</table>
-
-
-
-<table class="table">
-    <thead>
-    <tr>
-
         <th scope="col">Repair Order</th>
         <th scope="col">Date</th>
-        <th scope="col">Description</th>
+        <th scope="col">Advisor</th>
+        <th scope="col">Paid</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td th:text="${job?.repairOrder}"></td>
+    <tr th:each="job : ${jobs}">
+        <td><a th:href="@{/dashboardAdd/{workId}(workId=${job.id})}" th:text="${job.repairOrder}"></a></td>
         <td th:text="${job?.date}"></td>
-        <td th:text="${job?.description}"></td>
+        <td th:text="${job?.advisor}"></td>
+        <td th:text="${job?.paid}"></td>
     </tr>
     </tbody>
 </table>
+</div>
 
 
 
@@ -60,15 +80,15 @@
 
 
 
-    <div th:each="job : ${jobs}">
+ <!--   <div th:each="job : ${jobs}">
         <a th:href="@{/dashboardAdd/{workId}(workId=${job.id})}" th:text="${job.repairOrder}"></a>
-        <!--<div th:text="|Date: ${job.date}|"></div>-->
+        <div th:text="|Date: ${job.date}|"></div>
         </br>
-    </div>
+    </div>-->
 
 
 
-<div>
+<!--<div>
 <form th:action="@{/logout}" method="post">
     <input type="submit"
            name="logout-submit"
@@ -76,7 +96,16 @@
            class="btn btn-secondary btn-lg"
            value="Log Out">
 </form>
-</div>
+</div>-->
+
+
+<script>
+    $(document).ready(function() {
+    $('#workTable').DataTable( {
+        order: [ [ 0, 'desc' ] ]
+    } );
+} );
+</script>
 
 
 </body>

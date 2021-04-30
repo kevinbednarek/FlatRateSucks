@@ -6,9 +6,45 @@
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Add Job</title>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/images/Transparent_Logo.png"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <input type="submit"
+                           name="login-submit"
+                           id="createJob"
+                           class="btn btn-primary btn-lg"
+                           value="Save Job">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+                <div>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit"
+                               name="logout-submit"
+                               id="logout"
+                               class="btn btn-secondary btn-sm"
+                               value="Log Out">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
 </head>
 <body>
-<h1>Add Job</h1>
 
 <div class="container" th:if="${job != null}">
 
@@ -16,6 +52,7 @@
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
         <input type="hidden" th:field="${job.id}"/>
         <input type="hidden" th:field="${job.user}"/>
+
 
         <div class="container">
 
@@ -26,11 +63,26 @@
                        name="repairOrder"
                        class="form-control"
                        autofocus="autofocus"
-                       placeholder="Repair Order">
+                       placeholder="Repair Order Number">
             </div>
 
             <div>
                 <input type="date" class="form-control" name="date" th:value="${job.date}" />
+            </div>
+            <div class="form-group">
+                <label for="advisor">Advisor:</label>
+                <input type="text" th:field="${job.advisor}"
+                       id="advisor"
+                       name="advisor"
+                       class="form-control"
+                       autofocus="autofocus"
+                       placeholder="Advisor">
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-check form-switch">
+                <input class="form-check-input "  type="checkbox" id="paid" th:field="${job.paid}">
+                <label class="form-check-label" for="paid">Paid</label>
             </div>
         </div></br>
 
@@ -68,12 +120,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input "  type="checkbox" id="paid" th:field="${job.paid}">
                                     <label class="form-check-label" for="paid">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -111,12 +163,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="paid2" th:field="${job.paid2}">
                                     <label class="form-check-label" for="paid2">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -154,12 +206,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="paid3" th:field="${job.paid3}">
                                     <label class="form-check-label" for="paid3">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -197,12 +249,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="paid4" th:field="${job.paid4}">
                                     <label class="form-check-label" for="paid4">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -240,12 +292,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="paid5" th:field="${job.paid5}">
                                     <label class="form-check-label" for="paid5">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -283,12 +335,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="paid6" th:field="${job.paid6}">
                                     <label class="form-check-label" for="paid6">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -326,12 +378,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="paid7" th:field="${job.paid7}">
                                     <label class="form-check-label" for="paid7">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -369,12 +421,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="paid8" th:field="${job.paid8}">
                                     <label class="form-check-label" for="paid8">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -412,12 +464,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="paid9" th:field="${job.paid9}">
                                     <label class="form-check-label" for="paid9">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -455,12 +507,12 @@
                                            placeholder="Hours">
                                 </div>
                             </div>
-                            <div class="col-sm">
+                            <!--<div class="col-sm">
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="paid10" th:field="${job.paid10}">
                                     <label class="form-check-label" for="paid10">Paid</label>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -468,378 +520,13 @@
         </div>
     </div>
 
+        </br>
 
-
-
-
-
-
-
-
-
-
-<!--<div class="container" th:if="${job != null}">
-
-<form action="" method="post">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-    <input type="hidden" th:field="${job.id}"/>
-    <input type="hidden" th:field="${job.user}"/>
-
-  <div class="container">
-
-    <div class="form-group">
-    <label for="repairOrder">Repair Order:</label>
-    <input type="text" th:field="${job.repairOrder}"
-           id="repairOrder"
-           name="repairOrder"
-           class="form-control"
-           autofocus="autofocus"
-           placeholder="Repair Order">
-    </div>
-
-    <div>
-        <input type="date" class="form-control" name="date" th:value="${job.date}" />
-    </div>
-  </div></br>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <div class="form-group">
-                    <label for="description0">Job Description:</label>
-                    <input type="text" th:field="${job.description0}"
-                           id="description0"
-                           name="description0"
-                           class="form-control"
-                           autofocus="autofocus"
-                           placeholder="Job Description">
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <label for="hours">Hours:</label>
-                    <input type="text" th:field="${job.hours}"
-                           id="hours"
-                           name="hours"
-                           class="form-control"
-                           autofocus="autofocus"
-                           placeholder="Hours">
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-check form-switch">
-                    <input class="form-check-input "  type="checkbox" id="paid0" th:field="${job.paid0}">
-                    <label class="form-check-label" for="paid0">Paid</label>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="description2">Job Description:</label>
-                <input type="text" th:field="${job.description2}"
-                       id="description2"
-                       name="description2"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Job Description">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="hours2">Hours:</label>
-                <input type="text" th:field="${job.hours2}"
-                       id="hours2"
-                       name="hours2"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Hours">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="paid2" th:field="${job.paid2}">
-                <label class="form-check-label" for="paid2">Paid</label>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <div class="form-group">
-                    <label for="description3">Job Description:</label>
-                    <input type="text" th:field="${job.description3}"
-                           id="description3"
-                           name="description3"
-                           class="form-control"
-                           autofocus="autofocus"
-                           placeholder="Job Description">
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <label for="hours3">Hours:</label>
-                    <input type="text" th:field="${job.hours3}"
-                           id="hours3"
-                           name="hours3"
-                           class="form-control"
-                           autofocus="autofocus"
-                           placeholder="Hours">
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="paid3" th:field="${job.paid3}">
-                    <label class="form-check-label" for="paid3">Paid</label>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="description4">Job Description:</label>
-                <input type="text" th:field="${job.description4}"
-                       id="description4"
-                       name="description4"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Job Description">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="hours4">Hours:</label>
-                <input type="text" th:field="${job.hours4}"
-                       id="hours4"
-                       name="hours4"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Hours">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="paid4" th:field="${job.paid4}">
-                <label class="form-check-label" for="paid4">Paid</label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="description5">Job Description:</label>
-                <input type="text" th:field="${job.description5}"
-                       id="description5"
-                       name="description5"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Job Description">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="hours5">Hours:</label>
-                <input type="text" th:field="${job.hours5}"
-                       id="hours5"
-                       name="hours5"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Hours">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="paid5" th:field="${job.paid5}">
-                <label class="form-check-label" for="paid5">Paid</label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="description6">Job Description:</label>
-                <input type="text" th:field="${job.description6}"
-                       id="description6"
-                       name="description6"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Job Description">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="hours6">Hours:</label>
-                <input type="text" th:field="${job.hours6}"
-                       id="hours6"
-                       name="hours6"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Hours">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="paid6" th:field="${job.paid6}">
-                <label class="form-check-label" for="paid6">Paid</label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="description7">Job Description:</label>
-                <input type="text" th:field="${job.description7}"
-                       id="description7"
-                       name="description7"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Job Description">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="hours7">Hours:</label>
-                <input type="text" th:field="${job.hours7}"
-                       id="hours7"
-                       name="hours7"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Hours">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="paid7" th:field="${job.paid7}">
-                <label class="form-check-label" for="paid7">Paid</label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="description8">Job Description:</label>
-                <input type="text" th:field="${job.description8}"
-                       id="description8"
-                       name="description8"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Job Description">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="hours8">Hours:</label>
-                <input type="text" th:field="${job.hours8}"
-                       id="hours8"
-                       name="hours8"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Hours">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="paid8" th:field="${job.paid8}">
-                <label class="form-check-label" for="paid8">Paid</label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="description9">Job Description:</label>
-                <input type="text" th:field="${job.description9}"
-                       id="description9"
-                       name="description9"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Job Description">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="hours9">Hours:</label>
-                <input type="text" th:field="${job.hours9}"
-                       id="hours9"
-                       name="hours9"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Hours">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="paid9" th:field="${job.paid9}">
-                <label class="form-check-label" for="paid9">Paid</label>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="description10">Job Description:</label>
-                <input type="text" th:field="${job.description10}"
-                       id="description10"
-                       name="description10"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Job Description">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-group">
-                <label for="hours10">Hours:</label>
-                <input type="text" th:field="${job.hours10}"
-                       id="hours10"
-                       name="hours10"
-                       class="form-control"
-                       autofocus="autofocus"
-                       placeholder="Hours">
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="paid10" th:field="${job.paid10}">
-                <label class="form-check-label" for="paid10">Paid</label>
-            </div>
-        </div>
-    </div>
-</div>--></br>
-
-    <input type="submit"
+    <!--<input type="submit"
            name="login-submit"
            id="createJob"
            class="btn btn-primary btn-lg"
-           value="Add Job">
-
-
-
+           value="Save Job">-->
 
 </form>
 </div>

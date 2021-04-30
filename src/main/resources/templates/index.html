@@ -13,6 +13,30 @@
             window.location.href = "/register";
         };
 </script>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/images/Transparent_Logo.png"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+        Navbar text with an inline element
+      </span>
+            </div>
+        </div>
+    </nav>
+
+
+
+
 </head>
 <body>
 <div layout:fragment="content" th:remove="tag">
@@ -51,7 +75,7 @@
                                name="password"
                                class="form-control"
                                placeholder="Password">
-                    </div>
+                    </div></br>
 
 
                     <div class="form-group">
@@ -60,12 +84,12 @@
                                 <input type="submit"
                                        name="login-submit"
                                        id="login-submit"
-                                       class="btn btn-primary"
+                                       class="btn btn-secondary"
                                        value="Log In">
                                 <input type="button"
                                        name="create-account-submit"
                                        id="createAccount"
-                                       class="btn btn-secondary"
+                                       class="btn btn-dark"
                                        value="Create Account"
                                        onclick="createAccountRedirect()">
                             </div>

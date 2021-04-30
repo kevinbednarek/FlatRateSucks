@@ -28,15 +28,15 @@ public class Work {
     private Float hours10;
     //private Boolean rate; Not using this right now
     private Boolean paid;
-    private Boolean paid2;
-    private Boolean paid3;
-    private Boolean paid4;
-    private Boolean paid5;
-    private Boolean paid6;
-    private Boolean paid7;
-    private Boolean paid8;
-    private Boolean paid9;
-    private Boolean paid10;
+    //private Boolean paid2; switched to paid for entire ticket, not per line.
+    //private Boolean paid3;
+    //private Boolean paid4;
+    //private Boolean paid5;
+    //private Boolean paid6;
+    //private Boolean paid7;
+    //private Boolean paid8;
+    //private Boolean paid9;
+    //private Boolean paid10;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private String description;
@@ -49,6 +49,7 @@ public class Work {
     private String description8;
     private String description9;
     private String description10;
+    private String advisor;
 
     private User user;
     //private Set<TicketLine> ticketLines = new HashSet<>(); not using this, previous attempt
@@ -207,7 +208,7 @@ public class Work {
         this.hours10 = hours10;
     }
 
-    public Boolean getPaid2() {
+    /*public Boolean getPaid2() {
         return paid2;
     }
 
@@ -277,7 +278,7 @@ public class Work {
 
     public void setPaid10(Boolean paid10) {
         this.paid10 = paid10;
-    }
+    }*/
 
     public String getDescription2() {
         return description2;
@@ -349,6 +350,14 @@ public class Work {
 
     public void setDescription10(String description10) {
         this.description10 = description10;
+    }
+
+    public String getAdvisor() {
+        return advisor;
+    }
+
+    public void setAdvisor(String advisor) {
+        this.advisor = advisor;
     }
 
     /*@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="work")
