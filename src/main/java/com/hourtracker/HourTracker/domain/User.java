@@ -13,7 +13,7 @@ public class User {
     private String username;
     private String password;
     private String name;
-    //private String employer; not going to use this yet
+    private String employer;
     private Set<Authority> authorities = new HashSet<>();
     private Set<Work> jobs = new HashSet<>(); //added this to crate many jobs for one user. May be wrong.
 
@@ -59,13 +59,13 @@ public class User {
         this.name = name;
     }
 
-    //public String getEmployer() {
-    //return employer;
-    //}
+    public String getEmployer() {
+    return employer;
+    }
 
-    //public void setEmployer(String employer) {
-    //this.employer = employer;
-    //} ------ not using this yet
+    public void setEmployer(String employer) {
+    this.employer = employer;
+    }
 
     @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "user")
     public Set<Work> getJobs() {

@@ -50,6 +50,7 @@ public class Work {
     private String description9;
     private String description10;
     private String advisor;
+    private String note;
 
     private User user;
     //private Set<TicketLine> ticketLines = new HashSet<>(); not using this, previous attempt
@@ -358,6 +359,14 @@ public class Work {
 
     public void setAdvisor(String advisor) {
         this.advisor = advisor;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 
     /*@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="work")

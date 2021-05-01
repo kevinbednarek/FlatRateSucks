@@ -36,7 +36,7 @@ public class LoginController {
         System.out.println("register post mapping. Saves the user with user service?");
 
        User savedUser = userService.save(user);
-        return "redirect:/";
+        return "redirect:/about";
     }
 
     @PostMapping("/logout")
@@ -46,5 +46,13 @@ public class LoginController {
 
         return "redirect:/index";
 
+    }
+
+    @GetMapping("/about")
+    public String about(){
+
+        System.out.println("about get mapping");
+
+        return "about";
     }
 }
