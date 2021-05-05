@@ -1,12 +1,12 @@
-package com.hourtracker.HourTracker.service;
+package com.flatratesucks.service;
 
-import com.hourtracker.HourTracker.domain.User;
-import com.hourtracker.HourTracker.repositories.UserRepository;
+import com.flatratesucks.domain.User;
+import com.flatratesucks.repositories.UserRepository;
+import com.flatratesucks.security.CustomSecurityUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import com.hourtracker.HourTracker.security.CustomSecurityUser;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,10 +1,8 @@
-package com.hourtracker.HourTracker.security;
+package com.flatratesucks.security;
 
-import com.hourtracker.HourTracker.domain.User;
-import org.springframework.security.core.GrantedAuthority;
+import com.flatratesucks.domain.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 

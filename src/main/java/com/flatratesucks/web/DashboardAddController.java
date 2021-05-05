@@ -1,9 +1,8 @@
-package com.hourtracker.HourTracker.web;
+package com.flatratesucks.web;
 
-import com.hourtracker.HourTracker.domain.User;
-import com.hourtracker.HourTracker.domain.Work;
-import com.hourtracker.HourTracker.repositories.WorkRepository;
-import javassist.NotFoundException;
+import com.flatratesucks.domain.User;
+import com.flatratesucks.repositories.WorkRepository;
+import com.flatratesucks.domain.Work;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

@@ -1,4 +1,4 @@
-package com.hourtracker.HourTracker.service;
+package com.flatratesucks.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

@@ -1,6 +1,5 @@
-package com.hourtracker.HourTracker.domain;
+package com.flatratesucks.domain;
 
-import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.hourtracker.HourTracker.security;
+package com.flatratesucks.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

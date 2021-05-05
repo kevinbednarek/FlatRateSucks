@@ -1,13 +1,10 @@
-package com.hourtracker.HourTracker.domain;
+package com.flatratesucks.domain;
 
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 

@@ -1,6 +1,6 @@
-package com.hourtracker.HourTracker.domain;
+package com.flatratesucks.domain;
 
-import com.hourtracker.HourTracker.security.Authority;
+import com.flatratesucks.security.Authority;
 
 import javax.persistence.*;
 import java.util.HashSet;

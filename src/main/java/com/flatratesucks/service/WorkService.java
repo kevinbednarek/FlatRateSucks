@@ -1,7 +1,7 @@
-package com.hourtracker.HourTracker.service;
+package com.flatratesucks.service;
 
-import com.hourtracker.HourTracker.repositories.UserRepository;
-import com.hourtracker.HourTracker.repositories.WorkRepository;
+import com.flatratesucks.repositories.WorkRepository;
+import com.flatratesucks.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class WorkService {

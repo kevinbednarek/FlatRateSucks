@@ -1,4 +1,4 @@
-package com.hourtracker.HourTracker;
+package com.flatratesucks;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

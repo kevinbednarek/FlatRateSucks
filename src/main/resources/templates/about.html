@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+
+<head>
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/images/Transparent_Logo.png"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
+                    </li>
+                </ul>
+                <!--<span class="navbar-text">
+        Navbar text with an inline element
+      </span>-->
+            </div>
+        </div>
+    </nav>
+
+
+
+
+</head>
+<body>
+
+<div class="d-flex justify-content-center"><h1>Welcome to FlatRateSucks</h1></div>
+<div class="d-flex justify-content-center"><h3>Keeping track of your flat rate hours is hard. We're here to make it easy.</h3></div></br></br></br>
+<div class="d-flex justify-content-center"><h6>This is the about page, as you may have noticed. Hopefully all of your questions will be answered in here.
+    If not, let us know and we can fix that.</h6></div>
+
+    <div class="container">
+    <div class="col-sm">
+
+        </br></br>
+
+    <h3>How does this thing work?</h3>
+
+    <p>I'm sure you're aware, but keeping track of your hours at work isn't the easiest. We're here to help.
+        Once you create an account and log in
+        the rest should be pretty easy. There's a "dashboard" page that shows you your jobs listed by repair order.
+        If you want to sort or search by other means, you can do that, too. There are some little buttons at the top
+        of the table to help you out. Poke around and see what you think. When you need to add a job,
+        click the button at the top of the page. Once you're there, fill out the spaces and save your job with out of
+    the buttons on the top or bottom. Easy as that. Need to go back and look or edit a job? Click on the repair order number
+    and you're good to go. </p></br></br>
+
+    <h3>There are some important things to know.</h3>
+
+    <p>We can't all be perfect. There are bound to be some times you run into an error page. Upon seeing that confusing screen,
+    take some time for self-reflection and think about how your life has come to this point. Or, just hit the back button and see
+    what the heck is breaking the website.</p></br>
+    <p>When it comes to tracking the facets of your jobs, there are some good things to know. The "Repair Order" field is for numbers only.
+    Whole numbers to be specific. Don't try to get fancy and add letters or any punctuation, that's not how the database works. The "Hours"
+     section is similar, but you can have decimals in that one. The date field should be pretty self-explanatory. The other fields can handle
+    whatever you want to put in there...within reason. Keep it short and simple and everything should work just fine.</p></br></br>
+
+    <h3>Ten lines? What gives?</h3>
+
+    <p>Do you really need more? Obviously, in some cases, you do. We figured ten is a pretty safe bet for most of the repair orders
+        you will want to track. When you run into the car with tons of lines, simply create another job with the <strong>same</strong> repair order number
+    and add the rest the same way you added the first ten lines. </p></br></br>
+
+    <h3>Questions? Comments? Concerns?</h3>
+    <p>Drop us a line at <strong>kevinbednarek@gmail.com</strong></p></br>
+    </div>
+    </div>
+
+
+
+</body>
+</html>

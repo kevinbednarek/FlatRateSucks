@@ -1,7 +1,7 @@
-package com.hourtracker.HourTracker.web;
+package com.flatratesucks.web;
 
-import com.hourtracker.HourTracker.domain.User;
-import com.hourtracker.HourTracker.service.UserService;
+import com.flatratesucks.domain.User;
+import com.flatratesucks.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

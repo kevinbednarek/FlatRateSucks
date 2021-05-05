@@ -1,6 +1,6 @@
-package com.hourtracker.HourTracker.security;
+package com.flatratesucks.security;
 
-import com.hourtracker.HourTracker.domain.User;
+import com.flatratesucks.domain.User;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;

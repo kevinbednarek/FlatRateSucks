@@ -1,7 +1,7 @@
-package com.hourtracker.HourTracker.repositories;
+package com.flatratesucks.repositories;
 
-import com.hourtracker.HourTracker.domain.User;
-import com.hourtracker.HourTracker.domain.Work;
+import com.flatratesucks.domain.User;
+import com.flatratesucks.domain.Work;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

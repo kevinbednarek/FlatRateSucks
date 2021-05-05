@@ -1,8 +1,8 @@
-package com.hourtracker.HourTracker.service;
+package com.flatratesucks.service;
 
-import com.hourtracker.HourTracker.domain.User;
-import com.hourtracker.HourTracker.repositories.UserRepository;
-import com.hourtracker.HourTracker.security.Authority;
+import com.flatratesucks.domain.User;
+import com.flatratesucks.repositories.UserRepository;
+import com.flatratesucks.security.Authority;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
