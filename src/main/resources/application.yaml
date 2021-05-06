@@ -1,0 +1,9 @@
+server:
+  port: 5000
+
+app:
+  datasource:
+    jdbc-url: jdbc:mysql://flatratesucksdb.ckhvtslh3usv.us-east-2.rds.amazonaws.com:3306/HourTracker?useSSL=false
+    username: flatratesucksdb
+    password: Kb102392
+    pool-size: 30

@@ -8,7 +8,7 @@
 		<version>2.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.hourtracker</groupId>
+	<groupId>com.flatratesucks</groupId>
 	<artifactId>HourTracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>HourTracker</name>
@@ -61,13 +61,34 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>test</id>
+			<url>Repo path</url>
+		</repository>
+	</distributionManagement>
+
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
 		</plugins>
+
 	</build>
 
 </project>
