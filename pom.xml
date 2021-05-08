@@ -63,8 +63,8 @@
 
 	<distributionManagement>
 		<repository>
-			<id>test</id>
-			<url>Repo path</url>
+			<id>frsdb</id>
+			<url>jdbc:mysql://frsdb.ckhvtslh3usv.us-east-2.rds.amazonaws.com:3306/frsdb</url>
 		</repository>
 	</distributionManagement>
 
@@ -88,6 +88,15 @@
 				<version>3.0.0</version>
 			</plugin>
 		</plugins>
+
+
+		<extensions>
+			<extension>
+				<groupId>org.springframework.build</groupId>
+				<artifactId>aws-maven</artifactId>
+				<version>5.0.0.RELEASE</version>
+			</extension>
+		</extensions>
 
 	</build>
 
